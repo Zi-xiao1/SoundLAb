@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DecentSampler minVersion="1.0.0">
+  <ui width="812" height="375" bgImage="Images/tubularbells.jpg"layoutMode="relative" bgMode="top_left">
+    <tab name="main">
+      <labeled-knob x="0" y="0" width="90" textSize="16" textColor="FFFFFFFF" trackForegroundColor="FFFFFFFF" trackBackgroundColor="66999999" label="Attack" type="float" minValue="0.0" maxValue="4.0" value="0.0">
+        <binding type="amp" level="instrument" position="0" parameter="ENV_ATTACK"/>
+      </labeled-knob>
+      <labeled-knob x="65" y="0" width="90" textSize="16" textColor="FFFFFFFF" trackForegroundColor="FFFFFFFF" trackBackgroundColor="66999999" label="Release" type="float" minValue="0.0" maxValue="20.0" value="1.0">
+        <binding type="amp" level="instrument" position="0" parameter="ENV_RELEASE"/>
+      </labeled-knob>
+      <labeled-knob x="130" y="0" width="90" textSize="16" textColor="FFFFFFFF" trackForegroundColor="FFFFFFFF" trackBackgroundColor="66999999" label="Chorus" type="float" minValue="0.0" maxValue="1" value="0">
+        <binding type="effect" level="instrument" position="1" parameter="FX_MIX"/>
+      </labeled-knob>
+      <labeled-knob x="195" y="0" width="90" textSize="16" textColor="FFFFFFFF" trackForegroundColor="FFFFFFFF" trackBackgroundColor="66999999" label="Tone" type="float" minValue="0" maxValue="1" value="1.0">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY" translation="table" translationTable="0,33;0.3,150;0.4,450;0.5,1100;0.7,4100;0.9,11000;1.0001,22000"/>
+      </labeled-knob>
+      <labeled-knob x="260" y="0" width="90" textSize="16" textColor="FF000000" trackForegroundColor="FFFFFFFF" trackBackgroundColor="66999999" label="Reverb" type="percent" minValue="0" maxValue="100" value="0">
+        <binding type="effect" level="instrument" position="2" parameter="FX_REVERB_WET_LEVEL" translation="linear" translationOutputMin="0" translationOutputMax="1"/>
+      </labeled-knob>
+      
+      
+      <label text="Space" x="450" y="40" width="120" height="30" textColor="FF000000" textSize="16"/>
+      <menu x="450" y="70"  width="120" height="30" requireSelection="true" placeholderText="Choose..." value="1">
+          <option name="Livingroom">
+              <binding type="effect" level="instrument" position="1" parameter="FX_IR_FILE" translation="fixed_value" translationValue="samples/Sound_Lab.wav" />
+          </option>
+          <option name="Bed">
+              <binding type="effect" level="instrument" position="1" parameter="FX_IR_FILE" translation="fixed_value" translationValue="samples/Stairwell.wav" />
+          </option>
+          <option name="Bathroom">
+              <binding type="effect" level="instrument" position="1" parameter="FX_IR_FILE" translation="fixed_value" translationValue="samples/Bathroom.wav" />
+          </option>
+          
+      </menu>
+    </tab>
+    <keyboard/>
+    
+    
+    
+  </ui>
+  <groups attack="0.0" decay="25" sustain="1.0" release="1.0" volume="0dB">
+    <group>
+      <sample rootNote="39" loNote="39" hiNote="45" loVel="1" hiVel="96" path="samples/samples03.wav"/>
+      <sample rootNote="39" loNote="39" hiNote="45" loVel="97" hiVel="127" path="samples/samples00.wav"/>
+      <sample rootNote="46" loNote="46" hiNote="52" loVel="1" hiVel="96" path="samples/samples09.wav"/>
+      <sample rootNote="46" loNote="46" hiNote="52" loVel="97" hiVel="127" path="samples/samples06.wav" />
+      <sample rootNote="53" loNote="53" hiNote="59" loVel="1" hiVel="96" path="samples/samples15.wav"/>
+      <sample rootNote="53" loNote="53" hiNote="59" loVel="97" hiVel="127" path="samples/samples12.wav" />
+      <sample rootNote="60" loNote="60" hiNote="66" loVel="1" hiVel="96" path="samples/samples21.wav"/>
+      <sample rootNote="60" loNote="60" hiNote="66" loVel="97" hiVel="127" path="samples/samples18.wav" />
+      <sample rootNote="67" loNote="67" hiNote="73" loVel="1" hiVel="96" path="samples/samples37.wav"/>
+      <sample rootNote="67" loNote="67" hiNote="73" loVel="97" hiVel="127" path="samples/samples24.wav"/>
+      <sample rootNote="74" loNote="74" hiNote="80" loVel="1" hiVel="96" path="samples/samples33.wav"/>
+      <sample rootNote="74" loNote="74" hiNote="80" loVel="97" hiVel="127" path="samples/samples30.wav"/>
+      <sample rootNote="81" loNote="81" hiNote="87" loVel="1" hiVel="96" path="samples/samples39.wav"/>
+      <sample rootNote="81" loNote="81" hiNote="87" loVel="97" hiVel="127" path="samples/samples36.wav" />
+      <sample rootNote="88" loNote="88" hiNote="94" loVel="1" hiVel="96" path="samples/samples45.wav"/>
+      <sample rootNote="88" loNote="88" hiNote="94" loVel="97" hiVel="127" path="samples/samples42.wav"/>
+      <sample rootNote="95" loNote="95" hiNote="102" loVel="1" hiVel="96" path="samples/samples51.wav" />
+      <sample rootNote="95" loNote="95" hiNote="102" loVel="97" hiVel="127" path="samples/samples48.wav"/>
+      <effects/>
+    </group>
+  </groups>
+  <effects>
+    <effect type="lowpass" frequency="21989.00916994164"/>
+    <effect type="chorus" mix="0.0" modDepth="0.2" modRate="0.2"/>
+    <effect type="reverb" wetLevel="0.0" />
+    <effect type="convolution" mix="0.5" irFile="samples/Bathroom.wav"/>
+  </effects>
+  <midi/>
+  <modulators/>
+  <tags/>
+</DecentSampler>
